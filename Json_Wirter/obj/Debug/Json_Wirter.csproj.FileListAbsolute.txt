@@ -1,0 +1,15 @@
+D:\Json_Edit\Json_Wirter\bin\Debug\Json_Wirter.exe.config
+D:\Json_Edit\Json_Wirter\bin\Debug\Json_Wirter.exe
+D:\Json_Edit\Json_Wirter\bin\Debug\Json_Wirter.pdb
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.csprojAssemblyReference.cache
+D:\Json_Edit\Json_Wirter\obj\Debug\MainWindow.g.cs
+D:\Json_Edit\Json_Wirter\obj\Debug\App.g.cs
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter_MarkupCompile.cache
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter_MarkupCompile.lref
+D:\Json_Edit\Json_Wirter\obj\Debug\MainWindow.baml
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.g.resources
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.Properties.Resources.resources
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.csproj.GenerateResource.cache
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.csproj.CoreCompileInputs.cache
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.exe
+D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.pdb
