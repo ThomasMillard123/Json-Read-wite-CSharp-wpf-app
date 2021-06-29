@@ -103,16 +103,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
-
-
-                <TextBlock Text="Type" Grid.Row="2" Grid.Column="1" Margin="10,0"></TextBlock>
-                <ComboBox Grid.Row="2" Grid.Column="3" SelectedIndex="0" Margin="10,0">
-                    <ComboBoxItem Content="String"/>
-                    <ComboBoxItem Content="Int"/>
-                    <ComboBoxItem Content="Float"/>
-                    <ComboBoxItem Content="bool"/>
-                    <ComboBoxItem Content="Array"/>
+                <!--content -->
+                <TextBlock Text="Mode" Grid.Row="1" Grid.Column="1" Margin="10,0"></TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="3" SelectedIndex="0" Margin="10,0">
+                    <ComboBoxItem Content="Add"/>
+                    <ComboBoxItem Content="Remove"/>
+                    <ComboBoxItem Content="Find"/>
+                    <ComboBoxItem Content="Update"/>
                 </ComboBox>
+                <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="Display settings" Margin="10,0"></Button>
             </Grid>
         </GroupBox>
 
@@ -133,15 +132,43 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
 
-
-                <TextBlock Text="Input" Grid.Row="2" Grid.Column="1" Margin="10,0"></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="3" Margin="10,0" Text="Input here">
-
+                <!--content -->
+                <TextBlock Text="Add" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="10,0" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="Type" Grid.Row="2" Grid.Column="1" Margin="10,0"></TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="3" SelectedIndex="0" Margin="10,0">
+                    <ComboBoxItem Content="String"/>
+                    <ComboBoxItem Content="Int"/>
+                    <ComboBoxItem Content="Float"/>
+                    <ComboBoxItem Content="bool"/>
+                    <ComboBoxItem Content="Array"/>
+                </ComboBox>
+                
+                <TextBlock Text="Name" Grid.Row="3" Grid.Column="1" Margin="10,0"></TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="3" Margin="10,0" Text="Input Name" BorderBrush="Black" BorderThickness="1">
+            
                 </TextBox>
+                
+                <TextBlock Text="Data" Grid.Row="4" Grid.Column="1" Margin="10,0"></TextBlock>
+                <Border Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1" Margin="10,0">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" Name="scv3"  >
+                        <TextBox x:Name="TextBox2"   
+                     Text="Input Data" SpellCheck.IsEnabled="True" 
+                     MinHeight="{Binding ElementName=scv3,Path=ActualHeight}"
+                     TextWrapping="Wrap" AcceptsReturn="True"
+                      VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled"
+                     BorderThickness="0"
+                     />
+                    </ScrollViewer>
+                </Border>
+                
+                <Button Grid.Row="6" Grid.Column="3" Margin="10,0" Content="Add"></Button>
             </Grid>
         </GroupBox>
     </Grid>
