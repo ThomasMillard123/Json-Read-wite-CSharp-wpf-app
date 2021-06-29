@@ -28,3 +28,5 @@ D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.g.r
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.Properties.Resources.resources
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.GenerateResource.cache
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.CoreCompileInputs.cache
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Page1.g.cs
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Page1.baml

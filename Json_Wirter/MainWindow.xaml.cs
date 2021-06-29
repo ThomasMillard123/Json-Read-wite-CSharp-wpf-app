@@ -41,6 +41,13 @@ namespace Json_Wirter
             
         }
 
-      
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Input.Content = new Page1();
+        }
+
+        
+        
     }
 }
