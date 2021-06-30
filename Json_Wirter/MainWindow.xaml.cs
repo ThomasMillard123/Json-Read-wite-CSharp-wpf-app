@@ -42,12 +42,27 @@ namespace Json_Wirter
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //mode change
+        private void AddModeActivate(object sender, RoutedEventArgs e)
         {
             Input.Content = new Page1();
         }
 
-        
-        
+        private void RemoveModeActivate(object sender, RoutedEventArgs e)
+        {
+            Input.Content = new Page2();
+        }
+        private void FindModeActivate(object sender, RoutedEventArgs e)
+        {
+            Input.Content = new Page3();
+        }
+        private void UpdateModeActivate(object sender, RoutedEventArgs e)
+        {
+            Input.Content = new Page4();
+        }
+        private void DisplayModeActivate(object sender, RoutedEventArgs e)
+        {
+            Input.Content = new Page5();
+        }
     }
 }

@@ -1,0 +1,94 @@
+﻿<Page x:Class="Json_Wirter.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Json_Wirter"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Grid.Resources>
+            <Style x:Key="Title_Text" TargetType="TextBlock">
+                <Setter Property="Margin" Value="10,1"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="Sub_Text" TargetType="TextBlock">
+                <Setter Property="Margin" Value="10,1"/>
+                
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="10,1"/>
+            </Style>
+
+            <Style TargetType="ComboBox">
+                <Setter Property="Margin" Value="10,1"/>
+            </Style>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="10,1"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+            
+            
+            <Style TargetType="Border">
+                <Setter Property="Margin" Value="10,1"/>
+            </Style>
+
+        </Grid.Resources>
+        
+        
+        <!--input grid Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Add" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style = "{StaticResource Title_Text}" ></TextBlock>
+        <TextBlock Text="Type" Grid.Row="2" Grid.Column="1" Margin="10,0" Style = "{StaticResource Sub_Text}" ></TextBlock>
+        <ComboBox Grid.Row="2" Grid.Column="3" SelectedIndex="0" >
+            <ComboBoxItem Content="String"/>
+            <ComboBoxItem Content="Int"/>
+            <ComboBoxItem Content="Float"/>
+            <ComboBoxItem Content="bool"/>
+            <ComboBoxItem Content="Array"/>
+        </ComboBox>
+
+        <TextBlock Text="Name" Grid.Row="3" Grid.Column="1" Style = "{StaticResource Sub_Text}"/>
+        <TextBox Grid.Row="3" Grid.Column="3" Text="Input Name" />
+
+
+
+        <TextBlock Text="Data" Grid.Row="4" Grid.Column="1" Style = "{StaticResource Sub_Text}"/>
+        <Border Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Name="scv3"  >
+                <TextBox x:Name="TextBox2"   
+                     Text="Input Data" SpellCheck.IsEnabled="True" 
+                     MinHeight="{Binding ElementName=scv3,Path=ActualHeight}"
+                     TextWrapping="Wrap" AcceptsReturn="True"
+                      VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" 
+                       Style="{x:Null}"
+                     />
+            </ScrollViewer>
+        </Border>
+
+        <Button Grid.Row="6" Grid.Column="3" Margin="10,0" Content="Add"/>
+    </Grid>
+</Page>

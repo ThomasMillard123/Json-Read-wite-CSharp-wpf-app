@@ -10,6 +10,8 @@
         <CommandBinding Command="New" CanExecute="NewCommand_CanExecute" Executed="NewCommand_Executed" />
     </Window.CommandBindings>
 
+   
+    
     <Grid>
         <!--Main Grid Definitions-->
         <Grid.ColumnDefinitions>
@@ -57,9 +59,9 @@
             </Menu>
         </DockPanel>
 
-        <DockPanel x:Name="dock2" Grid.Column="1" Grid.Row="1" >
-            <TextBlock DockPanel.Dock="Top" Text="Json"/>
-        </DockPanel>
+
+        <TextBlock DockPanel.Dock="Top" Text="Json" Grid.Column="1" Grid.Row="1" />
+
         <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" BorderThickness="2" BorderBrush="Black">
             <ScrollViewer HorizontalScrollBarVisibility="Auto" Name="scv">
                 <TextBox x:Name="JsonBox" 
@@ -85,10 +87,24 @@
         </ScrollViewer>
     </Border>
         <GroupBox Grid.Row="1" Grid.Column="4" Header="Tools" Grid.RowSpan="100" Grid.ColumnSpan="2" >
-            <Grid Margin="0">
-                <!--tool grid Definitions-->
+ 
+            <Grid>
+                <!-- Grid style-->
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="1,1"/>
+                    </Style>
+
+                </Grid.Resources>
+                
+                <!-- Grid Definitions-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
@@ -96,18 +112,26 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
-                <!--content -->
-                <TextBlock Text="Mode" Grid.Row="1" Grid.Column="1" Margin="10,0"></TextBlock>
-                <Button Grid.Row="1" Grid.Column="2"  Content="add" Margin="10,0" Click="Button_Click"></Button>
-                <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="Display settings" Margin="10,0" Click="Button_Click"></Button>
+                
+                <!--content-->
+                <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="Mode" ></TextBlock>
+                <Button  Grid.Column="1" Grid.Row="2" Content="Add" Click="AddModeActivate"></Button>
+                <Button  Grid.Column="2" Grid.Row="2" Content="Remove"  Click="RemoveModeActivate"></Button>
+                <Button  Grid.Column="3" Grid.Row="2" Content="Find"   Click="FindModeActivate"></Button>
+                <Button  Grid.Column="1" Grid.Row="3" Content="Update"   Click="UpdateModeActivate"></Button>
+                <Button  Grid.Column="2" Grid.Row="3" Content="Display settings"   Click="DisplayModeActivate"></Button>
+
             </Grid>
+            
+            
         </GroupBox>
 
         <!--input box : change with type slected-->
@@ -118,6 +142,8 @@
 
             </Grid>
         </GroupBox>
+
+      
     </Grid>
 
 
