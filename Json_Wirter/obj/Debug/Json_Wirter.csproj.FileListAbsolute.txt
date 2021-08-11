@@ -13,7 +13,6 @@ D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.csproj.GenerateResource.cache
 D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.csproj.CoreCompileInputs.cache
 D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.exe
 D:\Json_Edit\Json_Wirter\obj\Debug\Json_Wirter.pdb
-D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csprojAssemblyReference.cache
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\MainWindow.g.cs
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\App.g.cs
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter_MarkupCompile.cache
@@ -38,3 +37,7 @@ D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Input_Page\Page
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Input_Page\Page3.baml
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Input_Page\Page4.baml
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Input_Page\Page5.baml
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\bin\Debug\Newtonsoft.Json.dll
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\bin\Debug\Newtonsoft.Json.xml
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.AssemblyReference.cache
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.CopyComplete

@@ -20,9 +20,21 @@ namespace Json_Wirter
     /// </summary>
     public partial class Page1 : Page
     {
+        Json.Json_Load_Make Json_Load_MakeA = new Json.Json_Load_Make();
         public Page1()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string text =TextBox2.Text ;
+            string name = NameBox.Text;
+            Json_Load_MakeA.ADDSerliizeData<string>(ref text, name); ;
+        }
+
+
+
+
     }
 }
