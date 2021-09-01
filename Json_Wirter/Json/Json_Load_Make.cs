@@ -15,73 +15,154 @@ using Newtonsoft.Json.Linq;
 
 namespace Json_Wirter.Json
 {
- 
-   public class CustomDataClass
+    
+    public class CustomDataClass<T>
     {
-      
-        public string data { get; set; }
+        //[JsonIgnore]
+        //public string PropertyName { get; set; }
+        public T data { get; set; }
     
     }
     public class CustomDataContractResolver : DefaultContractResolver
     {
-        public static readonly CustomDataContractResolver Instance = new CustomDataContractResolver();
+        //public static readonly CustomDataContractResolver Instance = new CustomDataContractResolver();
         public string propertyName { get; set; }
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
             var property = base.CreateProperty(member, memberSerialization);
-            if (property.DeclaringType == typeof(CustomDataClass))
-            {
+          
                 if (property.PropertyName.Equals("data", StringComparison.OrdinalIgnoreCase))
                 {
                     property.PropertyName = propertyName;
                 }
-            }
-           
+
+          
             return property;
         }
     }
-    public class Json_Load_Make
+
+
+
+    //singleton only need one 
+    public sealed class Json_Load_Make
     {
-        string FileName;
-        string Data;
-       
-        JObject data1;
-        public Json_Load_Make()
+       //string result;
+        public JObject JsonData { get; set; }
+        private Json_Load_Make()
         {
         }
 
-        public void SerliizeDataToFile<T>(ref T StringData)
-        {
-        }
+        public static Json_Load_Make Instance { get { return Nested.instance; } }
 
-        //
+        private class Nested
+        {
+            // Explicit static constructor to tell C# compiler
+            // not to mark type as beforefieldinit
+            static Nested()
+            {
+            }
+
+            internal static readonly Json_Load_Make instance = new Json_Load_Make();
+        }
+    
         public void ADDSerliizeData<T>(ref T NewData,string DataName)
         {
-            CustomDataClass texs = new CustomDataClass();
+            CustomDataClass<T> Data = new CustomDataClass<T>();
+            //Data.PropertyName = DataName;
             //set data
-            texs.data = NewData.ToString();
-            //set name
-            CustomDataContractResolver.Instance.propertyName = DataName;
-            //serialize data
-            var result = JsonConvert.SerializeObject(texs,
-                 new JsonSerializerSettings { ContractResolver = CustomDataContractResolver.Instance });
+            Data.data = NewData;
 
-         
+
+
+            //set name
+            CustomDataContractResolver customData = new CustomDataContractResolver();
+            customData.propertyName = DataName;
+
+            var options = new JsonSerializerSettings
+            {
+                ContractResolver = customData
+
+            };
+
+
+            //serialize data
+           var result = JsonConvert.SerializeObject(Data, options);
+           
             //json object
-            data1 =JObject.Parse(result);
-            
-        
+            JsonData =JObject.Parse(result);
+
+            result = JsonConvert.SerializeObject(Data);
+           
         }
 
-
-
-
-        public void DeserlizeData()
+        
+       //add to data
+        public void ADDTOObjectSerliizeData<T>(ref T NewData, string DataName)
         {
             
+
+            if (JsonData != null)
+            {
+
+                //json object
+                JsonData.Add(new JProperty(DataName, NewData));
+                
+            }
+            else
+            {
+
+
+                ADDSerliizeData<T>(ref NewData, DataName);
+
+             }
+
         }
 
-    }
+
+        public JObject JsonObjectData { get; set; }
+
+        public void ADDObject<T>(ref T NewData, string DataName, string objectName)
+        {
+            
+            if (JsonData != null)
+            {
+                CustomDataClass<T> Data = new CustomDataClass<T>();
+                //Data.PropertyName = DataName;
+                //set data
+                Data.data = NewData;
+
+                CustomDataContractResolver customData = new CustomDataContractResolver();
+                customData.propertyName = DataName;
+                var options = new JsonSerializerSettings
+                {
+                    ContractResolver = customData
+
+                };
+
+
+                //serialize data
+                var result = JsonConvert.SerializeObject(Data, options);
+
+                //json object
+                JsonObjectData = JObject.Parse(result);
+              
+                //json object
+                JsonData.Add(new JProperty(objectName, JsonObjectData));
+
+            }
+            else
+            {
+
+
+                ADDSerliizeData<T>(ref NewData, DataName);
+
+            }
+
+        }
+
+
+
+        }
 
 
 

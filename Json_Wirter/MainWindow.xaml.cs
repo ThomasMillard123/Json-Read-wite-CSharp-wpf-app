@@ -20,7 +20,7 @@ namespace Json_Wirter
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -47,12 +47,14 @@ namespace Json_Wirter
         private void AddModeActivate(object sender, RoutedEventArgs e)
         {
             Input.Content = new Page1();
+          
 
         }
 
         private void RemoveModeActivate(object sender, RoutedEventArgs e)
         {
             Input.Content = new Page2();
+            JsonBox.Text = Json.Json_Load_Make.Instance.JsonData.ToString();
         }
         private void FindModeActivate(object sender, RoutedEventArgs e)
         {
