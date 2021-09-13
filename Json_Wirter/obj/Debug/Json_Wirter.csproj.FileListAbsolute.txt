@@ -41,3 +41,7 @@ D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\bin\Debug\Newtonsoft.Json
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\bin\Debug\Newtonsoft.Json.xml
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.AssemblyReference.cache
 D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\Json_Wirter.csproj.CopyComplete
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\DataInputSelection\InputTable.g.cs
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\DataInputSelection\InputTextBox.g.cs
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\DataInputSelection\InputTable.baml
+D:\Json_Edit\Json-Read-wite-CSharp-wpf-app\Json_Wirter\obj\Debug\DataInputSelection\InputTextBox.baml

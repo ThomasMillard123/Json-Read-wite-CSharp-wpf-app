@@ -20,22 +20,43 @@ namespace Json_Wirter
     /// </summary>
     public partial class Page1 : Page
     {
-        TextBox textBox = new TextBox();
+       private bool IsEnambled= false;
+
+        DataInputSelection.TextBox datainpouttextbox = new DataInputSelection.TextBox();
+        DataInputSelection.Table dataInputTable = new DataInputSelection.Table();
 
         public Page1()
         {
             InitializeComponent();
+
+
+            IsEnambled = setDefualtsView();
         }
+
+
+        private bool setDefualtsView()
+        {
+
+
+            dataInput.Content = datainpouttextbox;
+            return true;
+        } 
+
+
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             
             string name;
             switch (DataTypeDrop.Text)
             {
                 case "String":
                     {
-                        string Data = textBox.Text;
+                        
+                        string Data = datainpouttextbox.TextBox2.Text;
                         name = NameBox.Text;
                         Json.Json_Load_Make.Instance.ADDSerliizeData<string>(ref Data, name);
                     }
@@ -43,7 +64,7 @@ namespace Json_Wirter
                 case "Int":
                     {
                         //TODO implment check to filter out string and other errors
-                        int Data = Int32.Parse(textBox.Text);
+                        int Data = Int32.Parse(datainpouttextbox.TextBox2.Text);
                         name = NameBox.Text;
                        Json.Json_Load_Make.Instance.ADDSerliizeData<int>(ref Data, name);
                     }
@@ -51,7 +72,7 @@ namespace Json_Wirter
                 case "Float":
                     {
                         //TODO implment check to filter out string and other errors
-                        float Data = float.Parse(textBox.Text);
+                        float Data = float.Parse(datainpouttextbox.TextBox2.Text);
                         name = NameBox.Text;
                         Json.Json_Load_Make.Instance.ADDSerliizeData<float>(ref Data, name);
                     }
@@ -77,7 +98,7 @@ namespace Json_Wirter
             {
                 case "String":
                     {
-                        string Data = textBox.Text;
+                        string Data = datainpouttextbox.TextBox2.Text;
                         name = NameBox.Text;
                         Json.Json_Load_Make.Instance.ADDTOObjectSerliizeData<string>(ref Data, name);
                     }
@@ -85,7 +106,7 @@ namespace Json_Wirter
                 case "Int":
                     {                      
                         int Data;
-                        if (Int32.TryParse(textBox.Text,out Data))
+                        if (Int32.TryParse(datainpouttextbox.TextBox2.Text, out Data))
                         {
                             name = NameBox.Text;
                             Json.Json_Load_Make.Instance.ADDTOObjectSerliizeData<int>(ref Data, name);
@@ -100,7 +121,7 @@ namespace Json_Wirter
                     {
                        
                         float Data;
-                        if (float.TryParse(textBox.Text, out Data))
+                        if (float.TryParse(datainpouttextbox.TextBox2.Text, out Data))
                         {
                             name = NameBox.Text;
                             Json.Json_Load_Make.Instance.ADDTOObjectSerliizeData<float>(ref Data, name);
@@ -117,12 +138,13 @@ namespace Json_Wirter
                         
                         int Data;
                         string Text= string.Empty;
-                        if (Int32.TryParse(textBox.Text, out Data))
+                        if (Int32.TryParse(datainpouttextbox.TextBox2.Text, out Data))
                         {
 
                         }
                         else { 
-                             Text = textBox.Text.ToLower();
+                             Text = datainpouttextbox.TextBox2.Text;
+                            Text= Text.ToLower();
                         }
 
 
@@ -169,43 +191,35 @@ namespace Json_Wirter
         private void DataTypeDrop_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            ScrollViewer scrollViewer = new ScrollViewer();
-            scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
-            scrollViewer.Name = "scv3";
- 
-            switch (DataTypeDrop.Text)
+
+            if (IsEnambled)
             {
-               
-                case "Array":
-                    {
-                        
-                    }
-                    break;
-                case "Object":
-                    {
-                        
-                    }
-                    break;
-                default:
-                    {
-                        
-                        textBox = new TextBox();
-                        textBox.Name = "TextBox2";
+                switch (DataTypeDrop.Text)
+                {
 
-                        Grid.SetColumnSpan(textBox, 4);
-                        Grid.SetRowSpan(textBox, 2);
-                        Grid.SetRow(textBox, 4);
-                        Grid.SetColumn(textBox, 3);
+                    case "Array":
+                        {
+                            dataInput.Content = dataInputTable;
+                        }
+                        break;
+                    case "Object":
+                        {
+                            dataInput.Content = dataInputTable;
+                        }
+                        break;
+                    default:
+                        {
 
+                            dataInput.Content = datainpouttextbox;
 
-
-
-
-                        MainGrid.Children.Add(textBox);
-                    }
-                    break;
+                        }
+                        break;
+                }
             }
 
         }
+
+
+        
     }
 }

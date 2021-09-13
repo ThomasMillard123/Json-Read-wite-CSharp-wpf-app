@@ -58,6 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DataInputSelection\InputTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataInputSelection\InputTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +74,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataInputSelection\InputTable.xaml.cs">
+      <DependentUpon>InputTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataInputSelection\InputTextBox.xaml.cs">
+      <DependentUpon>InputTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructs.cs" />
     <Compile Include="Json\Json_Load_Make.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

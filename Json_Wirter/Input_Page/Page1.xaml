@@ -79,17 +79,13 @@
 
 
         <TextBlock Text="Data" Grid.Row="4" Grid.Column="1"  Style = "{StaticResource Sub_Text}"/>
-        <!--<Border Grid.Column="3" Grid.Row="4" Grid.RowSpan="2"  Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="1" Name="DataInput">
+        <Border Grid.Column="3" Grid.Row="4" Grid.RowSpan="2"  Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="1" Name="DataInput">
             <ScrollViewer HorizontalScrollBarVisibility="Auto" Name="scv3"  >
-                <TextBox x:Name="TextBox2"   
-                     Text="Input Data" SpellCheck.IsEnabled="True" 
-                     MinHeight="{Binding ElementName=scv3,Path=ActualHeight}"
-                     TextWrapping="Wrap" AcceptsReturn="True"
-                      VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" 
-                       Style="{x:Null}"
-                     />
+               
+
+                <Frame NavigationUIVisibility="Hidden" MinHeight="{Binding ElementName=scv3,Path=ActualHeight}" Name="dataInput" />
             </ScrollViewer>
-        </Border>-->
+        </Border>
 
         <Button Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="10" Margin="10,0" Content="Add" Click="Button_Click_1"/>
         

@@ -48,7 +48,7 @@ namespace Json_Wirter
         {
             Input.Content = new Page1();
           
-
+           
         }
 
         private void RemoveModeActivate(object sender, RoutedEventArgs e)
